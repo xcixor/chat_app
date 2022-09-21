@@ -1,5 +1,5 @@
 import React from "react";
-import Login from "../components/Login";
+import Login from "../Login";
 import renderer from "react-test-renderer";
 
 it("Renders correctly", () => {
