@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Login from "../components/Login";
+import Login from "../Login";
 
 function renderLoginForm(args) {
 	let defaultProps = {
