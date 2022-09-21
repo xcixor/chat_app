@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly 1`] = `
+<div
+  className="d-flex justify-content-center align-items-center container"
+  style={
+    Object {
+      "height": "100vh",
+    }
+  }
+>
+  <div
+    className="row"
+  >
+    <form
+      className=""
+      onSubmit={[Function]}
+    >
+      <div>
+        <label
+          className="form-label"
+          style={
+            Object {
+              "fontWeight": "600",
+            }
+          }
+        >
+          Please Enter your Name
+        </label>
+        <input
+          className="form-control"
+          required={true}
+          type="text"
+        />
+      </div>
+      <button
+        className="mt-3 btn btn-primary"
+        disabled={false}
+        type="submit"
+      >
+        Start Chatting
+      </button>
+      <button
+        className="mt-3 btn btn-primary"
+        data-testid="create-new-id"
+        disabled={false}
+        onClick={[Function]}
+        type="submit"
+      >
+        Create an Id
+      </button>
+    </form>
+  </div>
+</div>
+`;
