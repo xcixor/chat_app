@@ -18,7 +18,6 @@ export default function Login({ onNameSubmit }) {
 			className="d-flex justify-content-center align-items-center"
 		>
 			<Row>
-				{}
 				<Form onSubmit={handleSubmit}>
 					<Form.Group>
 						<Form.Label style={{ fontWeight: "600" }}>
