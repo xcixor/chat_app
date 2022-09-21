@@ -1,16 +1,11 @@
-import React from "react";
-import "../public/style.css";
-import { createRoot } from "react-dom/client";
+/* eslint-disable no-unused-vars */
+import React, { useState } from "react";
+import Login from "./features/auth/components/Login";
+import useLocalStorage from "./features/auth/hooks/useLocalStorage"
 
-const rootElement = document.getElementById("app");
-const root = createRoot(rootElement);
-
-function Test() {
-	return <h1>Hello World!</h1>;
+function App() {
+	const [name, setName] = useState("");
+	return <Login onNameSubmit={setName} />;
 }
 
-root.render(
-	<React.StrictMode>
-			<Test />
-	</React.StrictMode>
-);
+export default App;
