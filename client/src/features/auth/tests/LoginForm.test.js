@@ -28,7 +28,7 @@ it("should render a button to create an id", () => {
 
 it("the create new id button is clickable", () => {
 	const { getByText } = renderLoginForm();
-	const createNewId = getByText("Start Chatting");
+	const createNewId = getByText("Create an Id");
 	const spy = jest.spyOn(createNewId, "click");
 	createNewId.click();
 	expect(spy).toHaveBeenCalledTimes(1);

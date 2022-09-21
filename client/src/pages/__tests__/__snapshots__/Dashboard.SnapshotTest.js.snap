@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Renders correctly 1`] = `
-<div>
+<div
+  data-testid="set-id"
+>
   random-string
 </div>
 `;

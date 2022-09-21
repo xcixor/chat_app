@@ -29,6 +29,7 @@ exports[`Renders correctly 1`] = `
         </label>
         <input
           className="form-control"
+          data-testid="name-input"
           required={true}
           type="text"
         />
