@@ -7,6 +7,7 @@ function renderMessageComponent(args) {
 		sender: "User 1",
 		id: "adbcd-3cert-rgt",
 		message: "Hi",
+		isMe: false,
 	};
 
 	const props = { ...defaultProps, ...args };

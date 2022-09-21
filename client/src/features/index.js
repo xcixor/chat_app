@@ -1,2 +1,3 @@
 import Login from "./auth/components/Login";
-export { Login };
+import ChatArea from "./chat/layouts/ChatArea";
+export { Login, ChatArea };
