@@ -42,7 +42,6 @@ exports[`Renders correctly 1`] = `
       </button>
       <button
         className="mt-3 btn btn-primary"
-        data-testid="create-new-id"
         disabled={false}
         onClick={[Function]}
         type="submit"

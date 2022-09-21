@@ -33,7 +33,6 @@ export default function Login({ onNameSubmit }) {
 						type="submit"
 						variant="primary"
 						className="mt-3"
-						data-testid="create-new-id"
 					>
 						Create an Id
 					</Button>
