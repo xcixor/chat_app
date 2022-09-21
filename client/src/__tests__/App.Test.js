@@ -22,7 +22,7 @@ describe("App", () => {
 			createNewIdBtn.click();
 			expect(spy).toHaveBeenCalledTimes(1);
 		});
-		const dashboardElement = screen.getByTestId("set-id");
+		const dashboardElement = screen.getByTestId("chat-room");
 		expect(dashboardElement).toBeTruthy();
 	});
 });
