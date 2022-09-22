@@ -3,9 +3,10 @@ import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Container, Row } from "react-bootstrap";
 import { ChatArea, MessageForm } from "../features";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export default function Dashboard({ id }) {
-	const [messages, setMessages] = useState([]);
+	const [messages, setMessages] = useLocalStorage("messages", []);
 	const [isConnectionOpen, setConnectionOpen] = useState(false);
 	const [messageBody, setMessageBody] = useState("");
 	const wss = useRef();
@@ -39,13 +40,13 @@ export default function Dashboard({ id }) {
 	}, []);
 	const scrollTarget = useRef(null);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		if (scrollTarget.current) {
 			const offsetBottom =
 				scrollTarget.current.offsetTop + scrollTarget.current.offsetHeight;
 			window.scrollTo({ top: offsetBottom });
 		}
-	}, [messages.length]);
+	}, [messages]);
 	return (
 		<Container
 			style={{ height: "calc(100% - 60px)", paddingBottom:"65px" }}
