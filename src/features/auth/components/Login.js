@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import { Container, Row, Form, Button } from "react-bootstrap";
-import { v4 as uuidv4 } from "uuid";
 
 export default function Login({ onNameSubmit }) {
 	const idRef = useRef();
@@ -9,9 +8,7 @@ export default function Login({ onNameSubmit }) {
 		e.preventDefault();
 		onNameSubmit(idRef.current.value);
 	};
-	const createNewId = () => {
-		onNameSubmit(uuidv4());
-	};
+
 	return (
 		<Container
 			style={{ height: "100vh" }}
@@ -31,14 +28,6 @@ export default function Login({ onNameSubmit }) {
 						/>
 					</Form.Group>
 					<Button type="submit" variant="primary" className="mt-3">
-						Start Chatting
-					</Button>
-					<Button
-						onClick={createNewId}
-						type="submit"
-						variant="primary"
-						className="mt-3"
-					>
 						Create an Id
 					</Button>
 				</Form>
