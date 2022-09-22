@@ -5,9 +5,9 @@ import ChatArea from "../ChatArea";
 
 const chatMessages = [
 	{
-		isMe: true,
 		sender: "Test User",
 		message: "Hi",
+		sentAt: "5:49",
 	},
 ];
 const mockChildComponent = jest.fn();
@@ -24,7 +24,8 @@ test("If ChatArea is passed messages and currentUser, Message is called with pro
 	render(<ChatArea messages={chatMessages} currentUser="Test User" />);
 	expect(mockChildComponent).toHaveBeenCalledWith(
 		expect.objectContaining({
-			...chatMessages[0],
+			isMe: true,
+			message: chatMessages[0],
 		})
 	);
 });

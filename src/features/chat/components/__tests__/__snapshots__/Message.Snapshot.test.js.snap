@@ -6,6 +6,7 @@ exports[`Renders correctly 1`] = `
   style={
     Object {
       "backgroundColor": "#E8E8E8",
+      "color": "#606060",
       "height": "auto",
     }
   }
@@ -13,8 +14,15 @@ exports[`Renders correctly 1`] = `
   <h4>
     Me
   </h4>
-  <p>
-    Hi
-  </p>
+  <p />
+  <span
+    style={
+      Object {
+        "fontSize": "0.8rem",
+      }
+    }
+  >
+    <i />
+  </span>
 </div>
 `;
