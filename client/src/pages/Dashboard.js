@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Container } from "react-bootstrap";
-import { ChatArea } from "../features";
+import { ChatArea, MessageForm } from "../features";
 
 const messages = [
 	{
@@ -35,6 +35,7 @@ export default function Dashboard({ id }) {
 	return (
 		<Container style={{ height: "100vh" }} data-testid="chat-room">
 			<ChatArea messages={messages} currentUser={id} />
+			<MessageForm />
 		</Container>
 	);
 }
