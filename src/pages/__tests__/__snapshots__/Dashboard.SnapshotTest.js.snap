@@ -120,5 +120,32 @@ exports[`Renders correctly 1`] = `
       </div>
     </div>
   </div>
+  <div
+    className="row"
+  >
+    <form
+      className="d-flex justify-content-center align-items-stretch"
+      onSubmit={[Function]}
+    >
+      <input
+        className="form-control"
+        placeholder="Say something"
+        required={true}
+        type="text"
+      />
+      <button
+        className="p-3 btn btn-primary"
+        disabled={false}
+        style={
+          Object {
+            "width": "20%",
+          }
+        }
+        type="submit"
+      >
+        Send
+      </button>
+    </form>
+  </div>
 </div>
 `;
