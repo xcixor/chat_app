@@ -39,14 +39,6 @@ exports[`Renders correctly 1`] = `
         disabled={false}
         type="submit"
       >
-        Start Chatting
-      </button>
-      <button
-        className="mt-3 btn btn-primary"
-        disabled={false}
-        onClick={[Function]}
-        type="submit"
-      >
         Create an Id
       </button>
     </form>
