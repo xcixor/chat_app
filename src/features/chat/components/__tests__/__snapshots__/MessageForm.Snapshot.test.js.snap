@@ -10,13 +10,14 @@ exports[`Renders correctly 1`] = `
   >
     <input
       className="form-control"
+      onChange={[Function]}
       placeholder="Say something"
       required={true}
       type="text"
     />
     <button
       className="p-3 btn btn-primary"
-      disabled={false}
+      disabled={true}
       style={
         Object {
           "width": "20%",
