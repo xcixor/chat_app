@@ -38,28 +38,27 @@ export default function Dashboard({ id }) {
 			wss.current.close();
 		};
 	}, []);
-	const scrollTarget = useRef(null);
+	const scrollElement = useRef(null);
 
 	useEffect(() => {
-		if (scrollTarget.current) {
-			const offsetBottom =
-				scrollTarget.current.offsetTop + scrollTarget.current.offsetHeight;
-			window.scrollTo({ top: offsetBottom });
+		if (scrollElement.current) {
+			scrollElement.current.scrollIntoView({ behavior: "smooth" });
 		}
-	}, [messages]);
+	}, [messages.length]);
 	return (
 		<Container
-			style={{ height: "calc(100% - 60px)", paddingBottom:"65px" }}
+			style={{ height: "calc(100% - 100px)", paddingBottom: "250px" }}
 			data-testid="chat-room"
-			ref={scrollTarget}
 		>
 			<ChatArea messages={messages} currentUser={id} />
-			<Row
+			<div
 				style={{
 					position: "fixed",
 					bottom: "0",
 					height: "60px",
 					width: "100%",
+					left: "0",
+					right: "0",
 				}}
 			>
 				<MessageForm
@@ -68,7 +67,8 @@ export default function Dashboard({ id }) {
 					sendMessage={sendMessage}
 					isConnectionOpen={isConnectionOpen}
 				/>
-			</Row>
+			</div>
+			<div ref={scrollElement} />
 		</Container>
 	);
 }
