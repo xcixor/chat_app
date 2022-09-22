@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { Login } from "./features";
-import useLocalStorage from "./features/auth/hooks/useLocalStorage";
+import useLocalStorage from "./hooks/useLocalStorage";
 import Dashboard from "./pages/Dashboard";
 import Navbar from "./layouts/Navbar";
 
