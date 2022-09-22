@@ -5,21 +5,20 @@ exports[`Renders correctly 1`] = `
   className="py-2 container"
 >
   <div
-    className="justify-content-between align-items-center nav"
+    className="align-items-center nav"
     onKeyDown={[Function]}
   >
     <div
       className="nav-item"
     >
       <a
-        className="p-2 btn btn-primary text-white nav-link"
-        data-rr-ui-event-key="/"
+        className="nav-link"
+        data-rr-ui-event-key="/history"
         disabled={false}
-        href="/"
+        href="/history"
         onClick={[Function]}
-        target="_blank"
       >
-        Connect as New User
+        View Chat History
       </a>
     </div>
   </div>
