@@ -9,24 +9,22 @@ import History from "./pages/History";
 
 function App() {
 	const [id, setId] = useLocalStorage("id");
-	const [itemsInLocalStorage, setItemsInLocalStorage] = useLocalStorage(
-		"messages",
-		[]
-	);
+	const [messages, setMessages] = useLocalStorage("messages", []);
 	const items = [];
 	return id ? (
 		<>
 			<Navbar currentUser={id} />
 			<Routes>
-				<Route path="/" element={<Dashboard id={id} />} />
+				<Route
+					path="/"
+					element={
+						<Dashboard id={id} messages={messages} setMessages={setMessages} />
+					}
+				/>
 				<Route
 					path="/history"
 					element={
-						<History
-							currentUser={id}
-							items={itemsInLocalStorage}
-							itemsPerPage={25}
-						/>
+						<History currentUser={id} items={messages} itemsPerPage={25} />
 					}
 				/>
 			</Routes>

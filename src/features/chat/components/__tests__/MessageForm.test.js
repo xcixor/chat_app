@@ -5,6 +5,9 @@ import MessageForm from "../MessageForm";
 function renderMessageForm(args) {
 	let defaultProps = {
 		onMessageSubmit: () => {},
+		messageBody: "",
+		sendMessage: () => {},
+		isConnectionOpen: true,
 	};
 	const props = { ...defaultProps, ...args };
 	return render(<MessageForm {...props} />);

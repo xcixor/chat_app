@@ -7,7 +7,8 @@
 		"start:dev": "webpack serve --config webpack.config.dev.js --port 8800",
 		"start:wss": "node server/index.js",
 		"start": "run-p start:dev start:wss",
-		"test": "jest --watch"
+		"test": "jest --watch",
+		"clear_jest": "jest --clearCache"
 	},
 	"repository": {
 		"type": "git",
