@@ -5,7 +5,7 @@ import Message from "../components/Message";
 
 export default function ChatArea({ currentUser, messages }) {
 	return (
-		<Container style={{ backgroundColor: "#F0F0F0" }}>
+		<Container style={{ backgroundColor: "#F0F0F0" }} className="chat-area">
 			{messages
 				? messages.map((message, index) => (
 						<Row key={index}>

@@ -8,13 +8,26 @@ export default function Navbar({ currentUser }) {
 			<Nav className="justify-content-between align-items-center">
 				{currentUser ? (
 					<Nav.Item>
-						<Nav.Link href="/" className="p-0">Hi {currentUser}</Nav.Link>
+						<Nav.Link href="/" className="p-0">
+							Hi {currentUser}
+						</Nav.Link>
 					</Nav.Item>
 				) : (
 					""
 				)}
 				<Nav.Item>
-					<Nav.Link href="/" target="_blank" className="p-2 btn btn-primary text-white">
+					<Nav.Link
+						href="/history"
+					>
+						History
+					</Nav.Link>
+				</Nav.Item>
+				<Nav.Item>
+					<Nav.Link
+						href="/"
+						target="_blank"
+						className="p-2 btn btn-primary text-white"
+					>
 						Connect as New User
 					</Nav.Link>
 				</Nav.Item>
