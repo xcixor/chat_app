@@ -5,8 +5,7 @@ import { Container, Row } from "react-bootstrap";
 import { ChatArea, MessageForm } from "../features";
 import useLocalStorage from "../hooks/useLocalStorage";
 
-export default function Dashboard({ id }) {
-	const [messages, setMessages] = useLocalStorage("messages", []);
+export default function Dashboard({ id, messages, setMessages }) {
 	const [isConnectionOpen, setConnectionOpen] = useState(false);
 	const [messageBody, setMessageBody] = useState("");
 	const wss = useRef();
@@ -75,4 +74,6 @@ export default function Dashboard({ id }) {
 
 Dashboard.propTypes = {
 	id: PropTypes.string.isRequired,
+	messages: PropTypes.array.isRequired,
+	setMessages: PropTypes.func.isRequired,
 };
