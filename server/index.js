@@ -34,10 +34,12 @@ server.on("connection", (ws) => {
 				console.error("Invalid message");
 				return;
 			}
+			var date = new Date();
+			var timeString = `${date.getHours()}:${date.getMinutes()}`;
 			const messageToSend = {
 				sender: data.sender,
-				body: data.body,
-				sentAt: Date.now(),
+				message: data.body,
+				sentAt: timeString,
 			};
 			broadcastMessage(messageToSend);
 		} catch (e) {

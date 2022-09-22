@@ -4,9 +4,11 @@ import Message from "../Message";
 
 function renderMessageComponent(args) {
 	let defaultProps = {
-		sender: "User 1",
-		id: "adbcd-3cert-rgt",
-		message: "Hi",
+		message: {
+			message: "Hi",
+			sender: "User 1",
+			sentAt: "5:52",
+		},
 		isMe: false,
 	};
 
