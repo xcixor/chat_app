@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly 1`] = `
+<div
+  className="py-2 container"
+>
+  <div
+    className="justify-content-between align-items-center nav"
+    onKeyDown={[Function]}
+  >
+    <div
+      className="nav-item"
+    >
+      <a
+        className="p-2 btn btn-primary text-white nav-link"
+        data-rr-ui-event-key="/"
+        disabled={false}
+        href="/"
+        onClick={[Function]}
+        target="_blank"
+      >
+        Connect as New User
+      </a>
+    </div>
+  </div>
+</div>
+`;
