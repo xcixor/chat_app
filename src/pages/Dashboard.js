@@ -1,41 +1,73 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { ChatArea, MessageForm } from "../features";
 
-const messages = [
-	{
-		sender: "User 1",
-		id: "adbcd-3cert-rgt",
-		message: "Hi",
-	},
-	{
-		sender: "User 2",
-		id: "adbcd-23ert-rgt",
-		message: "Hello, how are you doing",
-	},
-	{
-		sender: "User 1",
-		id: "adbcd-3cert-rgt",
-		message: "Im fine, thank you.",
-	},
-	{
-		sender: "User 2",
-		id: "adbcd-23ert-rgt",
-		message: "Good to hear",
-	},
-	{
-		sender: "User 3",
-		id: "adbcd-3abvt-rgt",
-		message: "Hi",
-	},
-];
 export default function Dashboard({ id }) {
+	const [messages, setMessages] = useState([]);
+	const [isConnectionOpen, setConnectionOpen] = useState(false);
+	const [messageBody, setMessageBody] = useState("");
+	const wss = useRef();
+	const sendMessage = () => {
+		if (messageBody) {
+			console.log(messageBody);
+			wss.current.send(
+				JSON.stringify({
+					sender: id,
+					body: messageBody,
+				})
+			);
+			setMessageBody("");
+		}
+	};
+	useEffect(() => {
+		wss.current = new WebSocket("ws://localhost:9500");
+		wss.current.onopen = () => {
+			console.log("Connection opened");
+			setConnectionOpen(true);
+		};
+		wss.current.onmessage = (event) => {
+			const data = JSON.parse(event.data);
+			console.log(data, "data");
+			setMessages((_messages) => [..._messages, data]);
+		};
+		return () => {
+			console.log("Closing...");
+			wss.current.close();
+		};
+	}, []);
+	const scrollTarget = useRef(null);
+
+	React.useEffect(() => {
+		if (scrollTarget.current) {
+			const offsetBottom =
+				scrollTarget.current.offsetTop + scrollTarget.current.offsetHeight;
+			window.scrollTo({ top: offsetBottom });
+		}
+	}, [messages.length]);
 	return (
-		<Container style={{ height: "100vh" }} data-testid="chat-room">
+		<Container
+			style={{ height: "calc(100% - 60px)", paddingBottom:"65px" }}
+			data-testid="chat-room"
+			ref={scrollTarget}
+		>
 			<ChatArea messages={messages} currentUser={id} />
-			<MessageForm />
+			<Row
+				style={{
+					position: "fixed",
+					bottom: "0",
+					height: "60px",
+					width: "100%",
+				}}
+			>
+				<MessageForm
+					onMessageSubmit={setMessageBody}
+					messageBody={messageBody}
+					sendMessage={sendMessage}
+					isConnectionOpen={isConnectionOpen}
+				/>
+			</Row>
 		</Container>
 	);
 }

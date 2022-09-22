@@ -6,7 +6,8 @@ exports[`Renders correctly 1`] = `
   data-testid="chat-room"
   style={
     Object {
-      "height": "100vh",
+      "height": "calc(100% - 60px)",
+      "paddingBottom": "65px",
     }
   }
 >
@@ -15,137 +16,50 @@ exports[`Renders correctly 1`] = `
     style={
       Object {
         "backgroundColor": "#F0F0F0",
-        "height": "80%",
+      }
+    }
+  />
+  <div
+    className="row"
+    style={
+      Object {
+        "bottom": "0",
+        "height": "60px",
+        "position": "fixed",
+        "width": "100%",
       }
     }
   >
     <div
       className="row"
     >
-      <div
-        className="mb-2 p-2 col-md-5"
-        style={
-          Object {
-            "backgroundColor": "#A020F0",
-            "height": "auto",
-          }
-        }
+      <form
+        className="d-flex justify-content-center align-items-stretch"
+        onSubmit={[Function]}
       >
-        <h4>
-          User 1
-        </h4>
-        <p>
-          Hi
-        </p>
-      </div>
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="Say something"
+          required={true}
+          type="text"
+          value=""
+        />
+        <button
+          className="p-3 btn btn-primary"
+          disabled={true}
+          onClick={[Function]}
+          style={
+            Object {
+              "width": "20%",
+            }
+          }
+          type="submit"
+        >
+          Send
+        </button>
+      </form>
     </div>
-    <div
-      className="row"
-    >
-      <div
-        className="mb-2 p-2 col-md-5"
-        style={
-          Object {
-            "backgroundColor": "#A020F0",
-            "height": "auto",
-          }
-        }
-      >
-        <h4>
-          User 2
-        </h4>
-        <p>
-          Hello, how are you doing
-        </p>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="mb-2 p-2 col-md-5"
-        style={
-          Object {
-            "backgroundColor": "#A020F0",
-            "height": "auto",
-          }
-        }
-      >
-        <h4>
-          User 1
-        </h4>
-        <p>
-          Im fine, thank you.
-        </p>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="mb-2 p-2 col-md-5"
-        style={
-          Object {
-            "backgroundColor": "#A020F0",
-            "height": "auto",
-          }
-        }
-      >
-        <h4>
-          User 2
-        </h4>
-        <p>
-          Good to hear
-        </p>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="mb-2 p-2 col-md-5"
-        style={
-          Object {
-            "backgroundColor": "#A020F0",
-            "height": "auto",
-          }
-        }
-      >
-        <h4>
-          User 3
-        </h4>
-        <p>
-          Hi
-        </p>
-      </div>
-    </div>
-  </div>
-  <div
-    className="row"
-  >
-    <form
-      className="d-flex justify-content-center align-items-stretch"
-      onSubmit={[Function]}
-    >
-      <input
-        className="form-control"
-        placeholder="Say something"
-        required={true}
-        type="text"
-      />
-      <button
-        className="p-3 btn btn-primary"
-        disabled={false}
-        style={
-          Object {
-            "width": "20%",
-          }
-        }
-        type="submit"
-      >
-        Send
-      </button>
-    </form>
   </div>
 </div>
 `;

@@ -5,14 +5,13 @@ import Message from "../components/Message";
 
 export default function ChatArea({ currentUser, messages }) {
 	return (
-		<Container style={{ backgroundColor: "#F0F0F0", height: "80%" }}>
+		<Container style={{ backgroundColor: "#F0F0F0" }}>
 			{messages
 				? messages.map((message, index) => (
 						<Row key={index}>
 							<Message
-								message={message.message}
+								message={message}
 								isMe={currentUser === message.sender ? true : false}
-								sender={message.sender}
 							/>
 						</Row>
 				  ))
